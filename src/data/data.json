@@ -1,0 +1,194 @@
+{
+  "Header": {
+    "title": "My Equb",
+    "paragraph": "FOR RELIABLE, EFFICIENT, TRANSPARENT AND FUN MONEY SAVING !"
+  },
+  "About": {
+    "paragraph": "MyEqub is a mobile app that digitalizes the existing Eqqub system so that the system is reliable, efficient, private and transparent. It gives the opportunity to informal saving grops to join digital financial services in a way which is familiar to them.",
+    "Why": [
+      "Provides secure way of randome winner slection.",
+      "Saves time, money and energy spent on contacting equb members.",
+      "easy group / Eqqubers creation.",
+      "Easy Eqqub management."
+    ],
+    "Why2": [
+      "easy turn allocatoin.",
+      "Easy money collection.",
+      "Easy money disbursements.",
+      "Easy way to keep every transaction records."
+    ]
+  },
+  "navbarEqubImage" : [
+    {"navImage": "img/EqubImage.png"}
+  ],
+  "Gallery": [
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/07-large.jpg",
+      "smallImage": "img/portfolio/07-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/08-large.jpg",
+      "smallImage": "img/portfolio/08-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/09-large.jpg",
+      "smallImage": "img/portfolio/09-small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-user",
+      "name": "Step - 1 : Be MyEqub App User",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    },
+    {
+      "icon": "fa fa-users",
+      "name": "Step - 2 : Create Equb Or Join One",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    },
+    {
+      "icon": "fa fa-money",
+      "name": "Step - 3: Save",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    },
+    {
+      "icon": "fa fa-trophy",
+      "name": "Step - 4 : Lottery",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    },
+    {
+      "icon": "fa fa-exchange",
+      "name": "Step - 5 : Swap Or Sell Equb",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    },
+    {
+      "icon": "fa fa-university",
+      "name": "Step - 6 : withdraw money",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/payment.png",
+      "name": "your payments",
+      "job": "where you can view your payements."
+    },
+    {
+      "img": "img/team/group.png",
+      "name": "Equb groups",
+      "job": "Where you can view list of equbs and details information of every equb."
+    },
+    {
+      "img": "img/team/invitation.png",
+      "name": "Invitations",
+      "job": "where you can view every invitation sent to you."
+    },
+    {
+      "img": "img/team/marketPlan.png",
+      "name": "Market Places",
+      "job": "where you can view Equbs that are for sell"
+    }
+  ],
+  "Contact": {
+    "address": "Bole Rwanda, Addis Ababa, Ethiopia ",
+    "phone": "+1 123 456 1234",
+    "email": "coop@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Downloads" : [
+    {
+      "icon": "fa fa-dashboard",
+      "title": "MyEqub Dashboard",
+      "text": "Keep track of Eqqubs informations."
+    }
+  ],
+  "Features": [
+    {
+      "icon": "fa fa-dashboard",
+      "title": "MyEqub Dashboard",
+      "text": "Keep track of Eqqubs informations."
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "Invite members",
+      "text": "Invite your friends to join your Eqqub."
+    },
+    {
+      "icon": "fa fa-trophy",
+      "title": "Lottery",
+      "text": "Secure and transparent lottery."
+    },
+    {
+      "icon": "fa fa-money",
+      "title": "Manager Cut",
+      "text": "Get a bonus for being the manager or get the oportunity to take the first round of Eqqub saving."
+    }
+  ]
+}
