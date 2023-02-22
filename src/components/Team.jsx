@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "../api/page";
 
 export const Team = (props) => {
+  const [screens, setScreens] = useState([]);
+  useEffect(() => {
+    const fetchScreens = async () => {
+      try {
+        const response = await api.get("/Team");
+        setScreens(response.data);
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log("Error : ${err.message}");
+        }
+      }
+    };
+    fetchScreens();
+  });
   return (
     <div id="team" className="text-center">
       <div className="container">
@@ -12,20 +31,19 @@ export const Team = (props) => {
           </p> */}
         </div>
         <div id="row">
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-3 col-sm-6 team">
+          {screens?.map((screen, i) => (
+                <div key={`${screen.name}-${i}`} className="col-md-3 col-sm-6 team">
                   <div className="thumbnail">
                     {" "}
-                    <img src={d.img} alt="..." className="team-img" />
+                    <img src={screen.img} alt="..." className="team-img" />
                     <div className="caption">
-                      <h4>{d.name}</h4>
-                      <p>{d.job}</p>
+                      <h4>{screen.name}</h4>
+                      <p>{screen.job}</p>
                     </div>
                   </div>
                 </div>
               ))
-            : "loading"}
+            }
         </div>
       </div>
     </div>
