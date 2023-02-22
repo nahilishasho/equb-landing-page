@@ -1,6 +1,25 @@
 import React from "react";
-
+import { useEffect,useState } from "react";
+import api from "../api/page";
 export const Header = (props) => {
+  const [header, setHeader] = useState([]);
+  useEffect(() => {
+    const fetchHeader = async () => {
+      try {
+        const response = await api.get("/Header");
+        setHeader(response.data);
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log("Error : ${err.message}");
+        }
+      }
+    };
+    fetchHeader();
+  });
   return (
     <header id="header">
       <div className="intro">
@@ -9,11 +28,12 @@ export const Header = (props) => {
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
                 <h1>
-                  {props.data ? props.data.title : "Loading"}
+                  {header.title}
                   <span></span>
                 </h1>
-                <p>{props.data ? props.data.paragraph : "Loading"}</p>
-                <a style = {{marginRight : "30px"}}
+                <p>{header.paragraph}</p>
+                <a
+                  style={{ marginRight: "30px" }}
                   href="#features"
                   className="btn btn-custom btn-lg page-scroll"
                 >

@@ -10,6 +10,7 @@
       "Saves time, money and energy spent on contacting equb members.",
       "easy group / Eqqubers creation.",
       "Easy Eqqub management."
+      
     ],
     "Why2": [
       "easy turn allocatoin.",
@@ -158,9 +159,9 @@
     "address": "Bole Rwanda, Addis Ababa, Ethiopia ",
     "phone": "+1 123 456 1234",
     "email": "coop@company.com",
-    "facebook": "fb.com",
-    "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "facebook": "https://www.facebook.com/cooperativebankoforomia/",
+    "twitter": "https://twitter.com/coopbankoromia?lang=en",
+    "youtube": "https://www.youtube.com/c/CoopbankoromiaEthio?app=desktop"
   },
   "Downloads" : [
     {
@@ -183,7 +184,7 @@
     {
       "icon": "fa fa-trophy",
       "title": "Lottery",
-      "text": "Secure and transparent lottery."
+      "text": "Secure and transparent lottery system."
     },
     {
       "icon": "fa fa-money",
