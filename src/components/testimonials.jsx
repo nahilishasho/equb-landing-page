@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "../api/page";
 
 export const Testimonials = (props) => {
+  const [testimonials, setTestimonials] = useState([]);
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await api.get("/Testimonials");
+        setTestimonials(response.data);
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log("Error : ${err.message}");
+        }
+      }
+    };
+    fetchTestimonials();
+  });
   return (
     <div id="testimonials">
       <div className="container">
@@ -8,22 +27,21 @@ export const Testimonials = (props) => {
           <h2>Testimonials</h2>
         </div>
         <div className="row">
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4">
+          {testimonials?.map((testimonial, i) => (
+                <div key={`${testimonial.name}-${i}`} className="col-md-4">
                   <div className="testimonial">
                     <div className="testimonial-image">
                       {" "}
-                      <img src={d.img} alt="" />{" "}
+                      <img src={testimonial.img} alt="" />{" "}
                     </div>
                     <div className="testimonial-content">
-                      <p>"{d.text}"</p>
-                      <div className="testimonial-meta"> - {d.name} </div>
+                      <p>"{testimonial.text}"</p>
+                      <div className="testimonial-meta"> - {testimonial.name} </div>
                     </div>
                   </div>
                 </div>
               ))
-            : "loading"}
+            }
         </div>
       </div>
     </div>

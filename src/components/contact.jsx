@@ -1,13 +1,32 @@
-import { useState } from "react";
 import emailjs from "emailjs-com";
-import React from "react";
 
+import React, { useState, useEffect } from "react";
+import api from "../api/page";
 const initialState = {
   name: "",
   email: "",
   message: "",
 };
 export const Contact = (props) => {
+  // To fetching data from api 
+  const [contacts, setContacts] = useState([]);
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await api.get("/Contact");
+        setContacts(response.data);
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log("Error : ${err.message}");
+        }
+      }
+    };
+    fetchContacts();
+  });
   const [{ name, email, message }, setState] = useState(initialState);
 
   const handleChange = (e) => {
@@ -102,7 +121,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-map-marker"></i> Address
                 </span>
-                {props.data ? props.data.address : "loading"}
+                {contacts ? contacts.address : "loading"}
               </p>
             </div>
             <div className="contact-item">
@@ -110,7 +129,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-phone"></i> Phone
                 </span>{" "}
-                {props.data ? props.data.phone : "loading"}
+                {contacts ? contacts.phone : "loading"}
               </p>
             </div>
             <div className="contact-item">
@@ -118,7 +137,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                {contacts ? contacts.email : "loading"}
               </p>
             </div>
           </div>
@@ -127,19 +146,18 @@ export const Contact = (props) => {
               <div className="social">
                 <ul>
                   <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
+                    <a href={contacts ? contacts.facebook : "/"}>
                       <i className="fa fa-facebook"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
+                    <a href={contacts ? contacts.twitter : "/"}>
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
+                    <a href={contacts ? contacts.youtube : "/"}>
                       <i className="fa fa-youtube"></i>
-                     
                     </a>
                   </li>
                 </ul>
