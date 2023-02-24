@@ -6,7 +6,7 @@ export const Testimonials = (props) => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await api.get("/Testimonials");
+        const response = await api.get("/feedbacks");
         setTestimonials(response.data);
       } catch (err) {
         if (err.response) {
@@ -20,22 +20,23 @@ export const Testimonials = (props) => {
     };
     fetchTestimonials();
   });
+ 
   return (
     <div id="testimonials">
       <div className="container">
         <div className="section-title text-center">
-          <h2>Testimonials</h2>
+          <h2>{testimonials? <>Testimonials</> : "" }</h2>
         </div>
         <div className="row">
           {testimonials?.map((testimonial, i) => (
                 <div key={`${testimonial.name}-${i}`} className="col-md-4">
                   <div className="testimonial">
-                    <div className="testimonial-image">
+                    {/* <div className="testimonial-image">
                       {" "}
                       <img src={testimonial.img} alt="" />{" "}
-                    </div>
+                    </div> */}
                     <div className="testimonial-content">
-                      <p>"{testimonial.text}"</p>
+                      <p>"{testimonial.message}"</p>
                       <div className="testimonial-meta"> - {testimonial.name} </div>
                     </div>
                   </div>

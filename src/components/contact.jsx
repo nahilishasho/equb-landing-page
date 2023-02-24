@@ -2,11 +2,11 @@ import emailjs from "emailjs-com";
 
 import React, { useState, useEffect } from "react";
 import api from "../api/page";
-const initialState = {
-  name: "",
-  email: "",
-  message: "",
-};
+// const initialState = {
+//   name: "",
+//   email: "",
+//   message: "",
+// };
 export const Contact = (props) => {
   // To fetching data from api 
   const [contacts, setContacts] = useState([]);
@@ -27,29 +27,42 @@ export const Contact = (props) => {
     };
     fetchContacts();
   });
-  const [{ name, email, message }, setState] = useState(initialState);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
-  const clearState = () => setState({ ...initialState });
+  // for posting the data from contact us to the api 
+  const [name , setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const postMessage = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+    api.post('/feedbacks', {name, email, message})
+    .then(res => console.log('Posting Data....', res))
+    .catch(err => console.log(err))
+  }
+  
+  // const [{ name, email, message }, setState] = useState(initialState);
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setState((prevState) => ({ ...prevState, [name]: value }));
+  // };
+  // const clearState = () => setState({ ...initialState });
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(name, email, message);
+  //   emailjs
+  //     .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //         clearState();
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  // };
   return (
     <div>
       <div id="contact">
@@ -64,7 +77,7 @@ export const Contact = (props) => {
                   Feel free to give us feedback about the app.
                 </p>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+              <form name="sentMessage" validate >
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -75,7 +88,9 @@ export const Contact = (props) => {
                         className="form-control"
                         placeholder="Name"
                         required
-                        onChange={handleChange}
+                        value = {name}
+                        onChange = {(e) => setName(e.target.value)}
+                        // onChange={handleChange}
                       />
                       <p className="help-block text-danger"></p>
                     </div>
@@ -89,7 +104,9 @@ export const Contact = (props) => {
                         className="form-control"
                         placeholder="Email"
                         required
-                        onChange={handleChange}
+                        value = {email}
+                        onChange = {(e) => setEmail(e.target.value)}
+                        // onChange={handleChange}
                       />
                       <p className="help-block text-danger"></p>
                     </div>
@@ -103,12 +120,14 @@ export const Contact = (props) => {
                     rows="4"
                     placeholder="Message"
                     required
-                    onChange={handleChange}
+                    value = {message}
+                    onChange = {(e) => setMessage(e.target.value)}
+                    // onChange={handleChange}
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
                 <div id="success"></div>
-                <button type="submit" className="btn btn-custom btn-lg">
+                <button type="submit" className="btn btn-custom btn-lg" onClick={postMessage}>
                   Send Message
                 </button>
               </form>
