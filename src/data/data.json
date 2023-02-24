@@ -133,6 +133,9 @@
       "name": "John Doe"
     }
   ],
+  "feedbacks" : [
+    
+  ],
   "Team": [
     {
       "img": "img/team/payment.png",
