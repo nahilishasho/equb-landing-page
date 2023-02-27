@@ -18,8 +18,8 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
           </button>
           <Image>{props.data ? props.data.iqubImage : "Loading"}</Image>
-          <a className="navbar-brand page-scroll" href="#page-top">
-            MyEqub
+          <a className="navbar-brand page-scroll">
+            MyEkub
           </a>{" "}
         </div>
 
@@ -28,6 +28,11 @@ export const Navigation = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
+          <li>
+              <a className="page-scroll"  href="#page-top">
+                Home
+              </a>
+            </li>
             <li>
               <a href="#features" className="page-scroll">
                 Features

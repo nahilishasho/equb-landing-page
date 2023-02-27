@@ -1,14 +1,12 @@
 import emailjs from "emailjs-com";
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import api from "../api/page";
-// const initialState = {
-//   name: "",
-//   email: "",
-//   message: "",
-// };
+// this is for the popover when the submit button is clicked.
+
+
 export const Contact = (props) => {
-  // To fetching data from api 
+  
+  // To fetching data from api
   const [contacts, setContacts] = useState([]);
   useEffect(() => {
     const fetchContacts = async () => {
@@ -28,41 +26,23 @@ export const Contact = (props) => {
     fetchContacts();
   });
 
-  // for posting the data from contact us to the api 
-  const [name , setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  // for posting the data from contact us to the api
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const postMessage = (e) => {
     e.preventDefault();
-    api.post('/feedbacks', {name, email, message})
-    .then(res => console.log('Posting Data....', res))
-    .catch(err => console.log(err))
-  }
-  
-  // const [{ name, email, message }, setState] = useState(initialState);
+    api
+      .post("/feedbacks", { name, email, message })
+      .then((res) => console.log("Posting Data....", res))
+      .then(setName(""), setEmail(""), setMessage(""))
+      
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setState((prevState) => ({ ...prevState, [name]: value }));
-  // };
-  // const clearState = () => setState({ ...initialState });
+      .catch((err) => console.log(err));
+     
+  };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(name, email, message);
-  //   emailjs
-  //     .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //         clearState();
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  // };
   return (
     <div>
       <div id="contact">
@@ -77,7 +57,7 @@ export const Contact = (props) => {
                   Feel free to give us feedback about the app.
                 </p>
               </div>
-              <form name="sentMessage" validate >
+              <form name="sentMessage" validate>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -88,9 +68,9 @@ export const Contact = (props) => {
                         className="form-control"
                         placeholder="Name"
                         required
-                        value = {name}
-                        onChange = {(e) => setName(e.target.value)}
-                        // onChange={handleChange}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                       
                       />
                       <p className="help-block text-danger"></p>
                     </div>
@@ -104,9 +84,9 @@ export const Contact = (props) => {
                         className="form-control"
                         placeholder="Email"
                         required
-                        value = {email}
-                        onChange = {(e) => setEmail(e.target.value)}
-                        // onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      
                       />
                       <p className="help-block text-danger"></p>
                     </div>
@@ -120,14 +100,18 @@ export const Contact = (props) => {
                     rows="4"
                     placeholder="Message"
                     required
-                    value = {message}
-                    onChange = {(e) => setMessage(e.target.value)}
-                    // onChange={handleChange}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                   
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
                 <div id="success"></div>
-                <button type="submit" className="btn btn-custom btn-lg" onClick={postMessage}>
+                <button
+                  type="submit"
+                  className="btn btn-custom btn-lg"
+                  onClick={postMessage}
+                >
                   Send Message
                 </button>
               </form>
@@ -186,11 +170,6 @@ export const Contact = (props) => {
         </div>
       </div>
       <div id="footer">
-        {/* <div className="container text-center">
-          <p>
-           
-          </p>
-        </div> */}
       </div>
     </div>
   );
